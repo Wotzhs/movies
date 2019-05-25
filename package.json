@@ -1,0 +1,25 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.12.3",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.87.1"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "clean": "rimraf dist .cache",
+    "build": "npm run clean && parcel build index.html --out-dir build"
+  }
+}
