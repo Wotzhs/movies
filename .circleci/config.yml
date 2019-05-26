@@ -16,4 +16,7 @@ jobs:
           command: echo $PWD
       - run:
           name: ls
-          command: cd ../ && echo $(ls)
+          command: echo $(ls)
+      - run:
+          name: last commit
+          command: git log --oneline -1 | awk '{print $1}'
