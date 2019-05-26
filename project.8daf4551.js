@@ -29230,14 +29230,10 @@ const $C2T2$export$default = () => {
   return $HdMw$$interop$default.d.createElement($yyIb$export$default, null, state.curationList ? $C2T2$var$RenderCurations(state.curationList) : $HdMw$$interop$default.d.createElement($C2T2$var$RenderLoading, null));
 };
 
-const $FLHj$export$default = () => {
+const $FLHj$export$default = async () => {
   var $O4Aa$$interop$default = $parcel$interopDefault($O4Aa$exports);
-  $O4Aa$$interop$default.d.get("https://cdn-discover.hooq.tv/v1.2/discover/titles/1af65c89-23d8-4ca6-a6d5-752d33a7d9e1").then(resp => {
-    console.log(resp);
-  });
-  $O4Aa$$interop$default.d.get("https://cdn-discover.hooq.tv/v1.2/discover/titles/1af65c89-23d8-4ca6-a6d5-752d33a7d9e1").then(resp => {
-    console.log(resp);
-  });
+  const resp = await $O4Aa$$interop$default.d.get("https://cdn-discover.hooq.tv/v1.2/discover/titles/1af65c89-23d8-4ca6-a6d5-752d33a7d9e1");
+  console.log(resp);
   return $HdMw$$interop$default.d.createElement($m8l7$export$ContextProvider, null, $HdMw$$interop$default.d.createElement($rx6s$export$BrowserRouter, null, $HdMw$$interop$default.d.createElement($Qb$export$default, null), $HdMw$$interop$default.d.createElement($cbqC$export$Switch, null, $HdMw$$interop$default.d.createElement($cbqC$export$Route, {
     exact: true,
     path: "/",
