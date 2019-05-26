@@ -10,3 +10,9 @@ jobs:
       - run:
           name: install dependencies
           command: yarn install
+      - run:
+          name: pwd
+          command: echo $PWD
+      - run:
+          name: ls
+          command: echo $LS
