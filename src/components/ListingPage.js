@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from "react"
 import axios from "axios"
+import slugify from "slugify"
 import { Context } from "../Context"
 import { Container, Placeholder, Segment, Image, Grid } from "semantic-ui-react"
+import { Link } from "react-router-dom"
 
 const RenderLoading = () => {
 	return (
@@ -43,7 +45,15 @@ const RenderMovies = movies => {
 						if (image.type.toLowerCase() === "poster") {
 							return (
 								<Grid.Column key={image.id}>
-									<Image src={image.url} size="small" wrapped alt={movie.title}/>
+									<Link to={{
+										pathname: `/movies/${slugify(movie.title)}`,
+										state: {
+											movieId: movie.id,
+											posterUrl: image.url,
+										}
+									}}>
+										<Image src={image.url} size="small" wrapped alt={movie.title}/>
+									</Link>
 									<p>{movie.title}</p>
 								</Grid.Column>
 							)
@@ -84,7 +94,7 @@ const ListingPage = () => {
 	}, [])
 
 	useEffect(() => {
-		if (!state.isLoading) {
+		if (!state.isLoading && state.page != state.previousPage ) {
 			dispatch({ type: "SET_IS_LOADING" })
 
 			const loadCuration = async () => {
@@ -110,6 +120,7 @@ const ListingPage = () => {
 	
 		return () => {
 			window.removeEventListener("scroll", handleScroll)
+			dispatch({ type: "SET_PREVIOUS_PAGE", previousPage: state.page })
 		}
 	}, [state.page])
 
