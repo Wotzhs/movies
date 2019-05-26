@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "14:ea:eb:53:f6:b0:7b:e6:83:8b:e2:c8:ba:ea:8e:e4"
+      - run:
+          name: test
+          command: git log --oneline -1 | awk '{print $1}'
