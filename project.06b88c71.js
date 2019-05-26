@@ -29193,10 +29193,7 @@ const $C2T2$export$default = () => {
   $HdMw$exports.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
-  console.log("test1");
   $HdMw$exports.useEffect(() => {
-    console.log("test2");
-
     if (!state.isLoading) {
       dispatch({
         type: "SET_IS_LOADING"
@@ -29231,7 +29228,7 @@ const $C2T2$export$default = () => {
 const $FLHj$export$default = () => {
   return $HdMw$$interop$default.d.createElement($m8l7$export$ContextProvider, null, $HdMw$$interop$default.d.createElement($rx6s$export$BrowserRouter, null, $HdMw$$interop$default.d.createElement($Qb$export$default, null), $HdMw$$interop$default.d.createElement($cbqC$export$Switch, null, $HdMw$$interop$default.d.createElement($cbqC$export$Route, {
     exact: true,
-    path: "/",
+    path: "/movies",
     component: $C2T2$export$default
   }))));
 };
