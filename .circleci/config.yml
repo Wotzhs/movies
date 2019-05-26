@@ -3,6 +3,10 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
+    filters:
+      branches:
+        ignore:
+          - gh-pages
     steps:
       - add_ssh_keys:
           fingerprints:
