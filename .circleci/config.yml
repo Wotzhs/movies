@@ -12,11 +12,19 @@ jobs:
           name: install dependencies
           command: yarn install
       - run:
-          name: pwd
-          command: echo $PWD
+          name: build project
+          command: yarn build
       - run:
-          name: ls
-          command: echo $(ls)
-      - run:
-          name: last commit
-          command: git log --oneline -1 | awk '{print $1}'
+          name: deploy to gh pages
+          command: |
+            git config user.email "wotzhs@gmail.com"
+            git config user.name "circleci-deployment"
+            mv build ../
+            rm -rf *
+            mv ../build/* .
+            git add .
+            LAST_COMMIT=$(git log --oneline -1 | awk '{print $1}')
+            git checkout gh-pages
+            git add .
+            git commit -m "deploy ${LAST_COMMIT}"
+            git push -u origin HEAD
