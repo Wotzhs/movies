@@ -10,7 +10,7 @@ const App = () => {
 			<BrowserRouter>
 				<Navbar></Navbar>
 				<Switch>
-					<Route exact path="/" component={ListingPage}/>
+					<Route exact path="/movies" component={ListingPage}/>
 				</Switch>
 			</BrowserRouter>
 		</ContextProvider>
