@@ -15,4 +15,4 @@ jobs:
           command: echo $PWD
       - run:
           name: ls
-          command: echo $LS
+          command: echo $(ls)
