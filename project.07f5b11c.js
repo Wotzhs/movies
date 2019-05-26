@@ -29200,6 +29200,8 @@ const $C2T2$export$default = () => {
       });
       var $O4Aa$$interop$default = $parcel$interopDefault($O4Aa$exports);
       $O4Aa$$interop$default.d.get(`https://cdn-discover.hooq.tv/v1.2/discover/feed?region=IN&page=${state.page}&perPage=20`).then(resp => {
+        console.log(resp);
+
         if (state.page >= resp.data.pagination.totalPages) {
           window.removeEventListener("scroll", handleScroll);
         }
