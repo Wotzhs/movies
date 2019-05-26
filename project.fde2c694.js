@@ -29194,6 +29194,8 @@ const $C2T2$export$default = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
   $HdMw$exports.useEffect(() => {
+    console.log(state);
+
     if (!state.isLoading) {
       dispatch({
         type: "SET_IS_LOADING"
