@@ -24,6 +24,8 @@ jobs:
             git checkout gh-pages
             rm -rf *
             mv ../build/* .
+            sed -i 's/src="\/p/src="p/g' index.html
+            sed -i 's/href="\/p/href="p/g' index.html
             git add .
             git commit -m "deploy ${LAST_COMMIT}"
-            git push
+            git push -u origin HEAD
