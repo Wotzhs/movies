@@ -29,3 +29,13 @@ jobs:
             git add .
             git commit -m "deploy ${LAST_COMMIT}"
             git push -u origin HEAD
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - gh-pages

@@ -10,6 +10,9 @@ const App = () => {
 			<BrowserRouter>
 				<Navbar></Navbar>
 				<Switch>
+					<Route exact path="/" component={ListingPage}/>
+
+				{/*gh pages routes*/}
 					<Route exact path="/movies" component={ListingPage}/>
 				</Switch>
 			</BrowserRouter>
