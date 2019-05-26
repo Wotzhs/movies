@@ -8,5 +8,5 @@ jobs:
           fingerprints:
             - "14:ea:eb:53:f6:b0:7b:e6:83:8b:e2:c8:ba:ea:8e:e4"
       - run:
-          name: test
-          command: git log --oneline -1 | awk '{print $1}'
+          name: install dependencies
+          command: yarn install
