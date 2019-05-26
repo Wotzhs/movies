@@ -21,7 +21,6 @@ jobs:
             git config user.name "circleci-deployment"
             mv build ../
             rm -rf *
-            rm -rf .circleci .babelrc .gitignore
             mv ../build/* .
             git add .
             LAST_COMMIT=$(git log --oneline -1 | awk '{print $1}')
