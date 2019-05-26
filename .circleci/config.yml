@@ -27,4 +27,4 @@ jobs:
             git checkout gh-pages
             git add .
             git commit -m "deploy ${LAST_COMMIT}"
-            git push -u origin HEAD
+            git push
